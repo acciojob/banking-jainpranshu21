@@ -10,11 +10,11 @@ public class StudentAccount extends BankAccount{
          this.institutionName=institutionName;
     }
 
-    public String getInstitutionName() {
+    /*public String getInstitutionName() {
         return institutionName;
     }
 
     public void setInstitutionName(String institutionName) {
         this.institutionName = institutionName;
-    }
+    }*/
 }

@@ -15,7 +15,7 @@ public class BankAccount {
       this.minBalance=minBalance;
     }
 
-    public String getName() {
+    /*public String getName() {
         return name;
     }
 
@@ -29,7 +29,7 @@ public class BankAccount {
 
     public void setMinBalance(double minBalance) {
         this.minBalance = minBalance;
-    }
+    }*/
 
     public String generateAccountNumber(int digits, int sum) throws Exception{
         //Each digit of an account number can lie between 0 and 9 (both inclusive)

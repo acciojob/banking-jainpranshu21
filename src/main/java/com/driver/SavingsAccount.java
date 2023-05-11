@@ -11,7 +11,7 @@ public class SavingsAccount extends BankAccount{
       this.rate=rate;
     }
 
-    public double getRate() {
+   /* public double getRate() {
         return rate;
     }
 
@@ -25,7 +25,7 @@ public class SavingsAccount extends BankAccount{
 
     public void setMaxWithdrawalLimit(double maxWithdrawalLimit) {
         this.maxWithdrawalLimit = maxWithdrawalLimit;
-    }
+    }*/
 
     public void withdraw(double amount) throws Exception {
         // Might throw the following errors:
