@@ -34,14 +34,17 @@ public class CurrentAccount extends BankAccount{
       return true;
     }
     boolean reArrange(String id){
-        int []c=new int[id.length()];
+        int []c=new int[26];
         for(int i=0;i<id.length();i++){
             int ch=id.charAt(i)-'A';
             c[ch]++;
         }
         int max_freq=0;
-        for(int i=0;i<26;i++)
-            max_freq=Math.max(max_freq,c[i]);
+        char ele='A';
+        for(int i=0;i<26;i++) {
+            max_freq = Math.max(max_freq, c[i]);
+            ele=(char)(i+'A');
+        }
         if(id.length()%2==0){
             if(max_freq>id.length()/2)
                 return false;
@@ -50,6 +53,27 @@ public class CurrentAccount extends BankAccount{
             if(max_freq>(id.length()/2)+1)
                 return false;
         }
+        char []ch=new char[id.length()];
+        String ans="";
+        int index=0;
+        for(index=0;index<id.length();index+=2){
+            if(max_freq>0) {
+                ch[index] = ele;
+                max_freq--;
+            }
+            else break;
+        }
+        for(int i=0;i<26;i++){
+            char c1=(char)(i+'A');
+            while (c[i]>0){
+                if(index>id.length()-1)
+                    index=1;
+                ch[index]=c1;
+            }
+        }
+        for(int i=0;i<ch.length;i++)
+            ans+=ch[i];
+        tradeLicenseId=ans;
         return true;
     }
 }
