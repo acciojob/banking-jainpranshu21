@@ -15,21 +15,6 @@ public class BankAccount {
       this.minBalance=minBalance;
     }
 
-    /*public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getMinBalance() {
-        return minBalance;
-    }
-
-    public void setMinBalance(double minBalance) {
-        this.minBalance = minBalance;
-    }*/
 
     public String generateAccountNumber(int digits, int sum) throws Exception{
         //Each digit of an account number can lie between 0 and 9 (both inclusive)
@@ -58,8 +43,8 @@ public class BankAccount {
     public void withdraw(double amount) throws Exception {
         // Remember to throw "Insufficient Balance" exception, if the remaining amount would be less than minimum balance
        if(balance-amount>=minBalance)
-           minBalance=balance-amount;
-       else throw new Exception("Insufficient Balance");
+           balance=balance-amount;
+       if(balance<minBalance) throw new Exception("Insufficient Balance");
     }
 
     public double getBalance() {
